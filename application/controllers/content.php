@@ -32,7 +32,17 @@ class Content extends CI_Controller {
 			$username = $this->content_model->find_user($row->user_id);
 		//	$row[] = array("username"=>$username);
 			$query_comment = $this->content_model->find_comment($row->post_id)->result();
+			
+				foreach($query_comment as $k => $row){
+					$time_array = explode(":",explode(" ", $row->date)[1]);
+					$day_array = explode("-",explode(" ", $row->date)[0]);
+					$time = $time_array[0].":".$time_array[1];
+					$day = $day_array[1]."-".$day_array[2];
+					$day_time = $day." ".$time;
+					$query_comment[$k]->minutes = $day_time;
+				}
 
+			
 			$query_result[$key]->username = $username;
 			$query_result[$key]->comment = $query_comment;
 
@@ -55,8 +65,10 @@ class Content extends CI_Controller {
 		// 	redirect("/");
 		// }
 		// else{
+
 			$this->content_model->comment_submit();
-			
+			$array = array('username'=>$this->session->userdata("username"));
+			echo json_encode($array);
 			// echo "true";
 		// }
 		
