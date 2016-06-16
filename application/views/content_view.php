@@ -28,7 +28,7 @@
     </div>
    
     <div class="actionBox">
-        <ul class="commentList">
+        <ul class="commentList" id = "commentList_<?php echo  $row->post_id; ?>">
         	<?php foreach($row->comment as $list):?>
 
           <li>
@@ -37,11 +37,11 @@
                   <p> <?php echo $list->username;?>: </p>
                 </div>
                 <div class="commentText">
-                    <p class=""><?php echo $list->comment_content;?></p> <span class="date sub-text"><?php echo $list->date;?></span>
+                    <p class=""><?php echo $list->comment_content;?></p> <span class="date sub-text"><?php echo $list->minutes;?></span>
 
                 </div>
             </li>
-            <li>
+            
             <?php endforeach; ?>
         </ul>
         <form class="form-inline" role="form" onsubmit="return false">
@@ -87,10 +87,15 @@
 			  var content = $(this).parent().parent().find(".form-group").find("input").val();
 			  var com_id = $(this).parent().parent().find(".form-group").find("input").attr('id');
 			  var id = com_id.split("_")[1];
-		
-		//	  var post_data = 'id='+id+'&comment='+content;
-		//	var post_data = {'id':id,'comment':content};
-			  //	 alert(post_data);
+              var currentdate = new Date();
+              var datetime;
+              var month = currentdate.getMonth()+1;
+              if(currentdate.getMonth() >= 0 && currentdate.getMonth()<= 8){
+                datetime = "0"+month+"-"+currentdate.getDate()+" "+currentdate.getHours()+":"+currentdate.getMinutes();
+              }
+              else
+               datetime = month+"-"+currentdate.getDate()+" "+currentdate.getHours()+":"+currentdate.getMinutes();
+
 
 			if(content != ''){
 					$.ajax({
@@ -98,8 +103,10 @@
 					url:"<?php echo base_url();?>content/comment",
 					data: {'id':id,'comment':content},
 					cache: false,
-					success: function(result){
-					// alert(result);
+                    dataType : 'JSON',
+					success: function(data){
+					
+                        $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
 					}
 					//return false;
 					});
