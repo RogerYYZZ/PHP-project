@@ -31,7 +31,11 @@ class Content extends CI_Controller {
 		foreach ($query_result as $key => $row) {
 			$username = $this->content_model->find_user($row->user_id);
 		//	$row[] = array("username"=>$username);
+			$query_comment = $this->content_model->find_comment($row->post_id)->result();
+
 			$query_result[$key]->username = $username;
+			$query_result[$key]->comment = $query_comment;
+
 		}
 	//	$data['content'] = $this->content_model->get_content();
 		$data['content'] = $query_result;
@@ -44,6 +48,18 @@ class Content extends CI_Controller {
 		$this->content_model->post_submit();
 		$data["user"] = $this->session->userdata("username");
 		redirect("/user/content");
+	}
+
+	public function post_comment(){
+		// if(!$this->session->userdata("username")){
+		// 	redirect("/");
+		// }
+		// else{
+			$this->content_model->comment_submit();
+			
+			// echo "true";
+		// }
+		
 	}
 	
 }

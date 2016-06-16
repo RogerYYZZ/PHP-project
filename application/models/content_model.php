@@ -36,4 +36,21 @@ class content_model extends CI_Model{
 		$username = $result['username'];
 		return $username;
 	}
+
+	public function find_comment($post_id){
+		$query = $this->db->query("SELECT username, comment_content,date FROM comment WHERE post_id = '".$post_id."'");
+		return $query;
+	}
+
+	public function comment_submit(){
+		// $json = $_POST["result"];
+		// $json = json_decode("json",true);
+		$comment = $_POST['comment'];
+		$id = $_POST['id'];
+		$username = $this->session->userdata("username");
+		// $comment = $json['comment'];
+		//  $id = $json['id'];
+		$this->db->query("INSERT INTO comment(username,post_id,comment_content) VALUES('$username','$id','$comment')");
+
+	}
 }
