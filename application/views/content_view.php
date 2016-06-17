@@ -44,12 +44,12 @@
             
             <?php endforeach; ?>
         </ul>
-        <form class="form-inline" role="form" onsubmit="return false">
+        <form class="form-inline" role="form" >
             <div class="form-group">
                 <input class="form-control" id = "comment_<?php echo $row->post_id;?>" type="text" placeholder="Your comments" required >
             </div>
             <div class="form-group">
-                <button class="btn btn-default">Add</button>
+                <button class="btn btn-default" type = "button">Add</button>
             </div>
         </form>
     </div>
@@ -84,17 +84,21 @@
 
 		
 		$("button").click(function(){
+            // if(<?php !isset($user)?>)
+            //         window.location.href = "<?php base_url();?>";
+            // else{
 			  var content = $(this).parent().parent().find(".form-group").find("input").val();
+              var form = $(this).parent().parent();
 			  var com_id = $(this).parent().parent().find(".form-group").find("input").attr('id');
 			  var id = com_id.split("_")[1];
               var currentdate = new Date();
               var datetime;
               var month = currentdate.getMonth()+1;
-              if(currentdate.getMonth() >= 0 && currentdate.getMonth()<= 8){
-                datetime = "0"+month+"-"+currentdate.getDate()+" "+currentdate.getHours()+":"+currentdate.getMinutes();
-              }
-              else
-               datetime = month+"-"+currentdate.getDate()+" "+currentdate.getHours()+":"+currentdate.getMinutes();
+            //  form.reset();
+            
+                datetime = ((month >= 1 && month <= 9)? ("0"+month):(month))+"-"+((currentdate.getDate()>=0 && currentdate.getDate() <= 9)?("0"+currentdate.getDate()):(currentdate.getDate()))+" "+((currentdate.getHours() >= 0 && currentdate.getHours() <= 9)? ("0"+currentdate.getHours()):(currentdate.getHours()))+":"+((currentdate.getMinutes() >= 0 && currentdate.getMinutes() <= 9)? ("0"+currentdate.getMinutes()):(currentdate.getMinutes()));
+              
+              
 
 
 			if(content != ''){
@@ -105,12 +109,17 @@
 					cache: false,
                     dataType : 'JSON',
 					success: function(data){
-					
-                        $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
+					   if(data != "false"){
+                            $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
+                            form[0].reset();
+                       }
+                        
+                 //    alert(form.attr('role'));
 					}
 					//return false;
 					});
 			}
+        
 		
 
 		});
