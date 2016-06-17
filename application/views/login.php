@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  <footer class="footer">
       <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+        <p class="text-muted">Copyright © 2016 Zheming</p>
       </div>
   </footer>
 </body>

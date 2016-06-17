@@ -9,10 +9,7 @@
     <script>
     tinymce.init(
       { selector:'textarea',
-      // toolbar: [
-      //     'undo redo | styleselect | bold italic | link image',
-      //     'alignleft aligncenter alignright'
-      //           ],
+      automatic_uploads: true,
     forced_root_block : "" ,
     //  force_br_newlines : true,
     // force_p_newlines : false,
@@ -63,6 +60,11 @@
 
 </div>
 
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright © 2016 Zheming</p>
+      </div>
+  </footer>
 
  
 </body>
