@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </form>
 </div>
 
- <footer class="footer">
+ <footer class="footer"  style="bottom: 0">
       <div class="container">
         <p class="text-muted">Copyright © 2016 Zheming</p>
       </div>

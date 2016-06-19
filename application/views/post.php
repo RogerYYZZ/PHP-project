@@ -60,7 +60,7 @@
 
 </div>
 
-<footer class="footer">
+<footer class="footer" style="bottom: 0">
       <div class="container">
         <p class="text-muted">Copyright © 2016 Zheming</p>
       </div>

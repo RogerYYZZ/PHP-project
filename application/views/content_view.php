@@ -15,7 +15,7 @@
 		<div class="col-md-5 col-md-offset-3">
 	<?php foreach ($content as $row): ?>
 
-		<div class="panel panel-default" >
+		<div class="panel panel-default" style = "margin-top: 30px">
        <div class="panel-heading" ><h3><?php echo $row->title; ?></h3><hr><cite><?php echo $row->username;?></cite> <p style="display: inline; margin-left: 20px"><?php echo $row->date;  ?></p></div>
        
         <div class="panel-body" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->content;?></div>
@@ -78,7 +78,7 @@
 
 <a href="#0" class="cd-top">Top</a>
 
-<footer class="footer">
+<footer class="footer" >
       <div class="container">
         <p class="text-muted">Copyright © 2016 Zheming</p>
       </div>
