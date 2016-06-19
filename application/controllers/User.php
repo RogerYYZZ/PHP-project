@@ -91,5 +91,7 @@ class User extends CI_Controller {
 		$this->load->view('new_user',$data);
 
 	}
+
+
 	
 }
