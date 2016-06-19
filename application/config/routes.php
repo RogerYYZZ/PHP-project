@@ -52,6 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['user/register'] = 'User/register';
 $route['user/logout'] = 'User/logout';
 $route['user/post'] = 'User/post';
+$route['user/post/(:num)'] = 'Content/post/$1';
+$route['user/profile'] = 'Content/get_profile';
 $route['user/submit'] = 'Content/submit';
 $route['user/new'] = 'User/new_user';
 $route['login'] = 'User/login';
