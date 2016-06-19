@@ -63,15 +63,33 @@ class Content extends CI_Controller {
 	public function post_comment(){
 		// if(!$this->session->userdata("username")){
 		// 	redirect("/");
+		// 	echo "false";
 		// }
-		// else{
+		//  else{
 
 			$this->content_model->comment_submit();
 			$array = array('username'=>$this->session->userdata("username"));
 			echo json_encode($array);
 			// echo "true";
-		// }
+		  // }
 		
+	}
+		public function get_profile(){
+		$this->load->model("content_model");
+		$my_post = $this->content_model->find_post($this->session->userdata("username"));
+		$data["user"] = $this->session->userdata("username");
+		$data["my_post"] = $my_post;
+		$this->load->view('head',$data);
+		$this->load->view('profile',$data);
+
+	}
+
+	public function post($id){
+		$this->load->model("content_model");
+		$data["user"] = $this->session->userdata("username");
+		$data["single_post"] = $this->content_model->find_single_post($id);
+		$this->load->view('head',$data);
+		$this->load->view('single_post',$data);
 	}
 	
 }
