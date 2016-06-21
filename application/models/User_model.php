@@ -48,7 +48,7 @@ class User_model extends CI_Model{
 				}
 				
 				else
-					return $password."nmb";
+					return $password."+".$query->row()->password;
 					//return $password;
 			}
 			else
