@@ -52,7 +52,7 @@ class User_model extends CI_Model{
 					//return $password;
 			}
 			else
-				return $password;
+				return $num;
 		
 
 	}
