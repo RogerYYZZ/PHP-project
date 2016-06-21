@@ -37,10 +37,10 @@ class User_model extends CI_Model{
 	public function create_new(){
 		$username = $_POST['username'];
 		$password = md5($_POST['password']);
-		$email = $_POST['email'];
+		$Email = $_POST['email'];
 		$query = $this->db->query("SELECT * FROM users Where username = '$username'");
 		if($query->num_rows() == 0){
-			$this->db->query("INSERT INTO users (username,Email,password) VALUES('$username', '$email', '$password')");
+			$this->db->query("INSERT INTO users (username,Email,password) VALUES('$username', '$Email', '$password')");
 			return true;
 		}
 
@@ -49,6 +49,8 @@ class User_model extends CI_Model{
 		}
 
 	}
+
+
 
 
 
