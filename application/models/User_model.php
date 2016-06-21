@@ -42,7 +42,7 @@ class User_model extends CI_Model{
 		
 			$num = $query->num_rows();
 			if($num !== 0){
-				if($password === $query->row()->password)
+				if($password == $query->row()->password)
 				{	$this->session->set_userdata("username",$username);
 					return $password."sb";
 				}
@@ -50,7 +50,7 @@ class User_model extends CI_Model{
 				else
 					//return $password."+".$query->row()->password;
 					//return $password;
-					return "false";
+					return $num;
 			}
 			else
 				return $num;
