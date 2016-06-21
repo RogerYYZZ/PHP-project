@@ -40,7 +40,7 @@ class User_model extends CI_Model{
 		$Email = $_POST['email'];
 		$query = $this->db->query("SELECT * FROM users Where username = '$username'");
 		if($query->num_rows() == 0){
-			$this->db->query("INSERT INTO users (username,Email,password) VALUES('$username', '$Email', '$password')");
+			$this->db->query("INSERT INTO users (username,email,password) VALUES('$username', '$Email', '$password')");
 			return true;
 		}
 
