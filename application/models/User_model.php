@@ -50,7 +50,7 @@ class User_model extends CI_Model{
 				else
 					//return $password."+".$query->row()->password;
 					//return $password;
-					return ($password == $query->row()->password)
+					return ($password == $query->row()->password);
 			}
 			else
 				return $num;
