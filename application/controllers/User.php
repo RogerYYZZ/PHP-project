@@ -50,18 +50,17 @@ class User extends CI_Controller {
 		$data = array();
 		$data["alert"] = $right;
 		$data["user"] = $this->session->userdata("username");
-		if(!$right){
-			$this->load->view('head',$data);
-			$this->load->view('login', $data);
-		}
+		// if(!$right){
+		// 	$this->load->view('head',$data);
+		// 	$this->load->view('login', $data);
+		// }
 
-		else{
-			// $this->load->view('head',$data);
-			// $this->load->view('post');
-			redirect("/user/content");
-		}
+		// else{
+		// 	redirect("/user/content");
+		// }
 			
-		
+		$this->load->view('head',$data);
+	 	$this->load->view('login', $data);
 		
 	}
 
