@@ -26,7 +26,7 @@ class Content extends CI_Controller {
 	}
 
 	public function show(){
-		
+		date_default_timezone_set('America/Los_Angeles');
 		$query_result = $this->content_model->get_content()->result();
 		foreach ($query_result as $key => $row) {
 			$username = $this->content_model->find_user($row->user_id);

@@ -59,7 +59,7 @@ class content_model extends CI_Model{
 		$user_id_query = $this->db->query("SELECT user_id FROM users WHERE username = '".$username."'");
 		$user_id_array = $user_id_query->row_array();
 		$user_id = $user_id_array['user_id'];
-		$my_post = $this->db->query("SELECT title,date AT TIME ZONE 'EST',post_id FROM post WHERE user_id = '".$user_id."'");
+		$my_post = $this->db->query("SELECT title,date,post_id FROM post WHERE user_id = '".$user_id."'");
 		return $my_post->result();
 	}
 
