@@ -72,6 +72,9 @@ class Content extends CI_Controller {
 			echo json_encode($array);
 			// echo "true";
 		  // }
+
+
+			
 		
 	}
 		public function get_profile(){
