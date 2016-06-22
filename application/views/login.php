@@ -16,8 +16,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <div class="container">
  <div class = 'col-sm-10'>
-  <div class="alert alert-danger" <?php if (!isset($alert)){?>style="display:none"<?php } ?>>
-    Check your username and password<?php echo $alert; ?>.
+  <div class="alert alert-danger" <?php if (!isset($alert) || $alert){?>style="display:none"<?php } ?>>
+    Check your username and password.
   </div>
 </div>
 

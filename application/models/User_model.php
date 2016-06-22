@@ -12,29 +12,7 @@ class User_model extends CI_Model{
 		$this->load->library('session');
 	}
 
-	// public function login(){
-
-	// 	$username = $_POST['username'];
-	// 	$password = md5($_POST['password']);
-	// 	$query = $this->db->query("SELECT * FROM users Where username = '$username'");
-		
-	// 		$num = $query->num_rows();
-	// 		if($num !== 0){
-	// 			if($password == $query->row()->password)
-	// 			{	$this->session->set_userdata("username",$username);
-	// 				return true;
-	// 			}
-				
-	// 			else
-	// 				return false;
-	// 				//return $password;
-	// 		}
-	// 		else
-	// 			return false;
-		
-
-	// }
-	 public function login(){
+	public function login(){
 
 		$username = $_POST['username'];
 		$password = md5($_POST['password']);
@@ -44,19 +22,18 @@ class User_model extends CI_Model{
 			if($num !== 0){
 				if($password == $query->row()->password)
 				{	$this->session->set_userdata("username",$username);
-					return $password."sb";
+					return true;
 				}
 				
 				else
-					 return $password."+".$query->row()->password.+"..";
-					//return $password;
-					//return strlen($query->row()->password);
+					return false;
 			}
 			else
-				return $num;
+				return false;
 		
 
 	}
+	
 
 	public function create_new(){
 		$username = $_POST['username'];
