@@ -56,7 +56,7 @@ class User extends CI_Controller {
 		}
 
 		else{
-			redirect("/user/content");
+			redirect("user/content");
 		}
 		
 	}
