@@ -26,7 +26,6 @@ class Content extends CI_Controller {
 	}
 
 	public function show(){
-		date_default_timezone_set('America/Los_Angeles');
 		$query_result = $this->content_model->get_content()->result();
 		foreach ($query_result as $key => $row) {
 			$username = $this->content_model->find_user($row->user_id);
@@ -42,7 +41,7 @@ class Content extends CI_Controller {
 					$query_comment[$k]->minutes = $day_time;
 				}
 
-			
+			$query_result[$key]->date = style_date($row->date);
 			$query_result[$key]->username = $username;
 			$query_result[$key]->comment = $query_comment;
 
@@ -74,7 +73,7 @@ class Content extends CI_Controller {
 		  // }
 
 
-			
+
 		
 	}
 		public function get_profile(){
@@ -93,6 +92,15 @@ class Content extends CI_Controller {
 		$data["single_post"] = $this->content_model->find_single_post($id);
 		$this->load->view('head',$data);
 		$this->load->view('single_post',$data);
+	}
+
+
+	public function style_date($date){
+		$time = explode(".",explode(" ",$date)[1])[0];
+		$day = explode(" ",$date)[0];
+		$m_d = explode("-",$day)[1]."-".explode("-",$day)[2];
+		$h_m = explode(":",$time)[0].":".explode(":",$time)[1];
+		return $m_d." ".$h_m;
 	}
 	
 }
