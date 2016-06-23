@@ -41,7 +41,7 @@ class Content extends CI_Controller {
 					$query_comment[$k]->minutes = $day_time;
 				}
 
-			$query_result[$key]->date = style_date($row->date);
+			$query_result[$key]->date = $this->style_date($row->date);
 			$query_result[$key]->username = $username;
 			$query_result[$key]->comment = $query_comment;
 
