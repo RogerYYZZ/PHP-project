@@ -8,11 +8,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 </head>
-
+<div id = "wrapper">
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-5 col-md-offset-3">
+		<div class="col-md-6 col-md-offset-2">
 	<?php foreach ($content as $row): ?>
 
 		<div class="panel panel-default" style = "margin-top: 30px">
@@ -83,6 +83,7 @@
         <p class="text-muted">Copyright © 2016 Zheming</p>
       </div>
   </footer>
+</div>
 </body>
 <script>
 
