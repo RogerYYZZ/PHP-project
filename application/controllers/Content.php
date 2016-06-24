@@ -23,6 +23,7 @@ class Content extends CI_Controller {
 		$this->load->library('session');
 		$this->load->helper('url');
 		$this->load->model("content_model");
+		
 	}
 
 	public function show(){
@@ -33,12 +34,14 @@ class Content extends CI_Controller {
 			$query_comment = $this->content_model->find_comment($row->post_id)->result();
 			
 				foreach($query_comment as $k => $row){
-					$time_array = explode(":",explode(" ", $row->date)[1]);
-					$day_array = explode("-",explode(" ", $row->date)[0]);
-					$time = $time_array[0].":".$time_array[1];
-					$day = $day_array[1]."-".$day_array[2];
-					$day_time = $day." ".$time;
-					$query_comment[$k]->minutes = $day_time;
+					// $time_array = explode(":",explode(" ", $row->date)[1]);
+					// $day_array = explode("-",explode(" ", $row->date)[0]);
+					// $time = $time_array[0].":".$time_array[1];
+					// $day = $day_array[1]."-".$day_array[2];
+					// $day_time = $day." ".$time;
+					// $query_comment[$k]->minutes = $day_time;
+				
+					$query_comment[$k]->minutes = $this->date_style($row->date);
 				}
 
 			$query_result[$key]->date = $this->style_date($row->date);
@@ -90,6 +93,11 @@ class Content extends CI_Controller {
 		$this->load->model("content_model");
 		$data["user"] = $this->session->userdata("username");
 		$data["single_post"] = $this->content_model->find_single_post($id);
+		$single_comment = $this->content_model->find_comment($id)->result();
+		foreach ($single_comment as $key => $row) {
+			$single_comment[$key]->minutes = $this->date_style($row->date);
+		}
+		$data["single_comment"] = $single_comment;
 		$this->load->view('head',$data);
 		$this->load->view('single_post',$data);
 	}
@@ -102,5 +110,16 @@ class Content extends CI_Controller {
 		$h_m = explode(":",$time)[0].":".explode(":",$time)[1];
 		return $m_d." ".$h_m;
 	}
+
+	 public function date_style($date){
+ 		$time_array = explode(":",explode(" ", $date)[1]);
+		$day_array = explode("-",explode(" ", $date)[0]);
+		$time = $time_array[0].":".$time_array[1];
+		$day = $day_array[1]."-".$day_array[2];
+		$day_time = $day." ".$time;
+		return $day_time;
+
+
+ }
 	
 }
