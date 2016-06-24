@@ -8,6 +8,18 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 </head>
+<style>
+.short-text{
+    overflow: hidden;
+    height: 11em;
+}
+
+.full-text{
+    height: auto;
+}
+
+</style>
+
 <div id = "wrapper">
 
 <div class="container">
@@ -18,7 +30,10 @@
 		<div class="panel panel-default" style = "margin-top: 30px">
        <div class="panel-heading" ><h3><?php echo $row->title; ?></h3><hr><cite><?php echo $row->username;?></cite> <p style="display: inline; margin-left: 20px"><?php echo $row->date;  ?></p></div>
        
-        <div class="panel-body" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->content;?></div>
+        <div class="panel-body short-text" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->content;?></div>
+        <div style="text-align:center;margin-top: 20px">
+            <a class = "show_more" id = "show_more_<?php echo $row->post_id;?>" href = "#" style="margin: auto">Show more</a>
+        </div>
         <hr>
 
         <div class="detailBox" id = "detailBox_<?php echo $row->post_id;?>">
@@ -130,7 +145,33 @@
 		
 
 		});
+            
+        $(".show_more").each(function() {
+            var content = $(this).parent().prev();
+            var visibleHeight = content[0].clientHeight;
+            var actualHide = content[0].scrollHeight - 1;
 
+            if (actualHide > visibleHeight) {
+                $(this).show();
+            } 
+            else {
+                $(this).hide();
+
+            }
+        });
+
+         $(".show_more").click(function(){
+            var content = $(this).parent().prev();
+            content.toggleClass("short-text, full-text");
+            var link_text = $(this).text();
+        //    alert(content.height());
+            if(link_text == "Show more")
+                $(this).text("Show less");
+            else
+                $(this).text("Show more");
+            return false;
+
+            });
 		
 
 	});
