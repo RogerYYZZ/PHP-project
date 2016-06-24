@@ -44,7 +44,7 @@ class Content extends CI_Controller {
 					$query_comment[$k]->minutes = $this->date_style($row->date);
 				}
 
-			//$query_result[$key]->date = $this->style_date($row->date);
+			$query_result[$key]->date = $this->style_date($row->date);
 			$query_result[$key]->username = $username;
 			$query_result[$key]->comment = $query_comment;
 
@@ -103,13 +103,13 @@ class Content extends CI_Controller {
 	}
 
 
-	// public function style_date($date){
-	// 	$time = explode(".",explode(" ",$date)[1])[0];
-	// 	$day = explode(" ",$date)[0];
-	// 	$m_d = explode("-",$day)[1]."-".explode("-",$day)[2];
-	// 	$h_m = explode(":",$time)[0].":".explode(":",$time)[1];
-	// 	return $m_d." ".$h_m;
-	// }
+	public function style_date($date){
+		$time = explode(".",explode(" ",$date)[1])[0];
+		$day = explode(" ",$date)[0];
+		$m_d = explode("-",$day)[1]."-".explode("-",$day)[2];
+		$h_m = explode(":",$time)[0].":".explode(":",$time)[1];
+		return $m_d." ".$h_m;
+	}
 
 	 public function date_style($date){
  		$time_array = explode(":",explode(" ", $date)[1]);
