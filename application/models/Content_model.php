@@ -64,7 +64,7 @@ class content_model extends CI_Model{
 	}
 
 	public function find_single_post($post_id){
-		$single_post = $this->db->query("SELECT title,content FROM post WHERE post_id = '".$post_id."'");
+		$single_post = $this->db->query("SELECT * FROM post WHERE post_id = '".$post_id."'");
 		return $single_post->row();
 
 	}
