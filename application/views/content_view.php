@@ -3,9 +3,14 @@
 <head>
 
 <link href="<?php echo base_url();?>public/css/style.css" rel="stylesheet"></link>
-<link href="<?php echo base_url();?>public/css/comment.css" rel="stylesheet"></link>
-<script src="<?php echo base_url();?>public/js/main.js"></script>
+<link href="<?php echo base_url();?>public/css/comment.css" rel="stylesheet"></link> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+    var BASE_URL = "<?php echo base_url();?>";
+</script>
+<script src="<?php echo base_url();?>public/js/comment.js"></script>
+<script src="<?php echo base_url();?>public/js/main.js"></script>
+
 
 </head>
 <style>
@@ -18,11 +23,13 @@
     height: auto;
 }
 
+
+
 </style>
 
-<div id = "wrapper">
 
-<div class="container">
+
+<div class="container" style="margin-bottom: 20px">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-2">
 	<?php foreach ($content as $row): ?>
@@ -98,55 +105,16 @@
         <p class="text-muted">Copyright © 2016 Zheming</p>
       </div>
   </footer>
-</div>
+
+
+
 </body>
 <script>
 
-	$(document).ready(function(){
+$(document).ready(function(){
 
-		
-		$("button").click(function(){
-            // if(<?php !isset($user)?>)
-            //         window.location.href = "<?php base_url();?>";
-            // else{
-			  var content = $(this).parent().parent().find(".form-group").find("input").val();
-              var form = $(this).parent().parent();
-			  var com_id = $(this).parent().parent().find(".form-group").find("input").attr('id');
-			  var id = com_id.split("_")[1];
-              var currentdate = new Date();
-              var datetime;
-              var month = currentdate.getMonth()+1;
-            //  form.reset();
-            
-                datetime = ((month >= 1 && month <= 9)? ("0"+month):(month))+"-"+((currentdate.getDate()>=0 && currentdate.getDate() <= 9)?("0"+currentdate.getDate()):(currentdate.getDate()))+" "+((currentdate.getHours() >= 0 && currentdate.getHours() <= 9)? ("0"+currentdate.getHours()):(currentdate.getHours()))+":"+((currentdate.getMinutes() >= 0 && currentdate.getMinutes() <= 9)? ("0"+currentdate.getMinutes()):(currentdate.getMinutes()));
-              
-              
-
-
-			if(content != ''){
-					$.ajax({
-					type: "POST",
-					url:"<?php echo base_url();?>content/comment",
-					data: {'id':id,'comment':content},
-					cache: false,
-                    dataType : 'JSON',
-					success: function(data){
-					   if(data != "false"){
-                            $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
-                            form[0].reset();
-                       }
-                        
-                 //    alert(form.attr('role'));
-					}
-					//return false;
-					});
-			}
         
-		
-
-		});
-            
-        $(".show_more").each(function() {
+            $(".show_more").each(function() {
             var content = $(this).parent().prev();
             var visibleHeight = content[0].clientHeight;
             var actualHide = content[0].scrollHeight - 1;
@@ -172,11 +140,15 @@
             return false;
 
             });
-		
+        
 
-	});
-	
+    });
+
 
 
 </script>
+
+
+
+
 

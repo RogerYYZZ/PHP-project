@@ -6,9 +6,13 @@
     var BASE_URL = "<?php echo base_url();?>";
 </script>
 <script src="<?php echo base_url();?>public/js/comment.js"></script>
+<style>
+
+
+</style>
 </head>
 
-<div class="container">
+<div class="container" style="margin-bottom: 20px">
 
 	<div class="row">
 		<div  class="col-md-8">
@@ -62,3 +66,9 @@
 
 	</div>
 </div>
+
+<footer class="footer" >
+      <div class="container">
+        <p class="text-muted">Copyright © 2016 Zheming</p>
+      </div>
+  </footer>
