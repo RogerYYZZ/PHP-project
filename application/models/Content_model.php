@@ -16,8 +16,8 @@ class content_model extends CI_Model{
 	public function post_submit(){
 		$username = $this->session->userdata("username");
 		$title = $_POST['title'];
-		$content = mysql_real_escape_string($_POST['content']);
-		//$content = pg_escape_string($_POST['content']);
+		//$content = mysql_real_escape_string($_POST['content']);
+		$content = pg_escape_string($_POST['content']);
 		$query = $this->db->query("SELECT user_id FROM users WHERE username = '".$username."'");
 		$result = $query->row_array();
 		$user_id = $result['user_id'];
