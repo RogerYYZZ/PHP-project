@@ -31,11 +31,13 @@
 
 <div class="container" style="margin-bottom: 20px">
 	<div class="row">
+        <div class="alert alert-info" id = "log_alert" role="alert" style = "display: none">You need log in first.</div>
 		<div class="col-md-6 col-md-offset-2">
+
 	<?php foreach ($content as $row): ?>
 
 		<div class="panel panel-default" style = "margin-top: 30px">
-       <div class="panel-heading" ><h3><?php echo $row->title; ?></h3><hr><cite><?php echo $row->username;?></cite> <p style="display: inline; margin-left: 20px"><?php echo $row->date;  ?></p></div>
+       <div class="panel-heading" ><h3><a href="<?php echo base_url();?>user/post/<?php echo $row->post_id;?>" style = "color: black"><?php echo $row->title; ?></a></h3><hr><cite><?php echo $row->username;?></cite> <p style="display: inline; margin-left: 20px"><?php echo $row->date;  ?></p></div>
        
         <div class="panel-body short-text" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->content;?></div>
         <div style="text-align:center;margin-top: 20px">

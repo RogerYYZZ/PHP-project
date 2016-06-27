@@ -26,11 +26,16 @@ $(document).ready(function(){
 					cache: false,
                     dataType : 'JSON',
 					success: function(data){
-					   if(data != "false"){
+					  
+                        if(data["error"] == "false"){
+                        //	window.location.href = BASE_URL;
+                        $("#log_alert").show();	
+                        }
+                        else{
                             $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
                             form[0].reset();
+                          //  alert(data);
                        }
-                        
                  //    alert(form.attr('role'));
 					}
 					//return false;

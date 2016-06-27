@@ -63,17 +63,17 @@ class Content extends CI_Controller {
 	}
 
 	public function post_comment(){
-		// if(!$this->session->userdata("username")){
-		// 	redirect("/");
-		// 	echo "false";
-		// }
-		//  else{
+		if(!$this->session->userdata("username")){
+			$array = array('error'=>'false');
+			echo json_encode($array);
+		}
+		 else{
 
 			$this->content_model->comment_submit();
 			$array = array('username'=>$this->session->userdata("username"));
 			echo json_encode($array);
 			// echo "true";
-		  // }
+		   }
 
 
 
