@@ -11,15 +11,16 @@
       { selector:'textarea',
       automatic_uploads: true,
     forced_root_block : "" ,
-    //  force_br_newlines : true,
-    // force_p_newlines : false,
+     //  force_br_newlines : true,
+     // force_p_newlines : false,
      
-      
+     
       plugins: [
     'advlist autolink lists link image charmap print preview anchor',
     'searchreplace visualblocks code fullscreen',
     'insertdatetime media table contextmenu paste code',
-    'autoresize'
+    'autoresize',
+    'nonbreaking'
   ],
   toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | mybutton',
   content_css: [
@@ -27,6 +28,7 @@
     '//www.tinymce.com/css/codepen.min.css',
     '/personal/public/css/content.css'
   ],
+  nonbreaking_force_tab: true,
           menubar: false,
          height:"800",
          width:"100%"
@@ -43,18 +45,16 @@
   height: 250px;
 }
 
-/*.wrapper{
-   min-height: 100%;
-  padding: 0 0 60px;
-   position:relative;
-    height: 100%;
-
-}*/
+div.mce-edit-area{
+    background:#FFF;
+    filter:none;
+    padding:10px; 
+}
 
 </style>
 
-<div class = "wrapper">
-<div class = "container">
+
+<div class = "container" style="margin-bottom: 40px">
  <div class="row">
     
     <div class="col-md-8 ">
@@ -72,7 +72,6 @@
   
   </div>
 
-</div>
 </div>
   <footer class="footer">
       <div class="container">
