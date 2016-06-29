@@ -59,6 +59,7 @@ $route['user/new'] = 'User/new_user';
 $route['login'] = 'User/login';
 $route['user/content'] = 'Content/show';
 $route['content/comment'] = 'Content/post_comment';
+$route['upload'] = 'Upload/Image_upload';
 $route['default_controller'] = 'User';
 //$route['(:any)'] = 'User';
 $route['404_override'] = '';
