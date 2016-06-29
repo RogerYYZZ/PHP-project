@@ -20,14 +20,26 @@
     'searchreplace visualblocks code fullscreen',
     'insertdatetime media table contextmenu paste code',
     'autoresize',
-    'nonbreaking'
+    'nonbreaking',
+
   ],
-  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | mybutton',
+  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   content_css: [
     '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
     '//www.tinymce.com/css/codepen.min.css',
     '/personal/public/css/content.css'
   ],
+
+  file_browser_callback: function(field_name,url,type,win){
+    if(type=='image') $('#my_form input').click();
+  },
+   // setup: function(editor) {
+   //    editor.addButton( 'mybutton', {
+   //              text:"IMAGE",
+   //              icon: false,
+            
+   //          });
+   //      },
   nonbreaking_force_tab: true,
           menubar: false,
          height:"800",
@@ -71,6 +83,7 @@ div.mce-edit-area{
 
   
   </div>
+  <form id="my_form" action="<?php echo base_url(); ?>upload" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden"><input name="userfile" type="file" onchange="$('#my_form').ajaxSubmit({ success: function(d){$('.mce-window .mce-container-body input:first').val(d);} });this.value='';">
 
 </div>
   <footer class="footer">
