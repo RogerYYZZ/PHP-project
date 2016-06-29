@@ -17,12 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     // 		$config['max_width']  = '1024';
     // 		$config['max_height']  = '768';
  			$this->load->library('upload',$config);
+ 			$this->upload->initialize($config);
  			$this->upload->do_upload();
  			$file_data = $this->upload->data();
  			echo base_url().'images/'.$file_data['file_name'];
  			// if(!$this->upload->do_upload()){
  			// 	$data['error'] = $this->upload->display_errors();
- 		// 	$this->load->view('post',$data);
+ 			// $this->load->view('post',$data);
  			// }
  		//	$this->load->view('content_view');
  		}
