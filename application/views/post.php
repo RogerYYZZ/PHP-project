@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
 
 
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
   
    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
