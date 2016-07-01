@@ -13,7 +13,7 @@
     forced_root_block : "" ,
      //  force_br_newlines : true,
      // force_p_newlines : false,
-     
+     convert_urls: false,
      
       plugins: [
     'advlist autolink lists link image charmap print preview anchor',
@@ -83,6 +83,7 @@ div.mce-edit-area{
 
   
   </div>
+
   <form id="my_form" action="<?php echo base_url(); ?>upload" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden"><input name="userfile" type="file" onchange="$('#my_form').ajaxSubmit({ success: function(d){$('.mce-window .mce-container-body input:first').val(d);} });this.value='';">
 
 </div>
