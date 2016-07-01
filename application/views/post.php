@@ -1,4 +1,4 @@
-
+<!DOCTYPE HTML> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -84,7 +84,8 @@ div.mce-edit-area{
   
   </div>
 
-  <form id="my_form" action="<?php echo base_url(); ?>upload" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden"><input name="userfile" type="file" onchange="$('#my_form').submit();this.value='';">
+  <form id="my_form" action="<?php echo base_url(); ?>upload" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden"> <input name="userfile" type="file" onchange="$('#my_form').ajaxSubmit({ success: function(d){$('.mce-window .mce-container-body input:first').val(d);} });this.value='';">
+  </form>
 </div>
   <footer class="footer">
       <div class="container">
