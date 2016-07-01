@@ -16,14 +16,19 @@
 <style>
 .short-text{
     overflow: hidden;
-    height: 11em;
+    height: 25em;
 }
 
 .full-text{
     height: auto;
 }
 
-
+.short-text img{
+    width: 500px;
+    height: 400px;
+    left:10px;
+    right:10px;
+}
 
 </style>
 
