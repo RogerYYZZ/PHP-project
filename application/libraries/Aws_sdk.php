@@ -10,7 +10,7 @@ class Aws_sdk{
 		$this->s3Client  = S3Client::factory(array(
 		//    'key'    => $this->ci->config->item('aws_access_key'),
 		 //   'secret' => $this->ci->config->item('aws_secret_key')
-			'key' => getenv['aws_access_key'];
+			'key' => getenv['aws_access_key'],
 			'secret' => getenv['aws_secret_key']
 		));
 	}
