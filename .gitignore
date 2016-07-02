@@ -4,7 +4,8 @@ application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
 
-application/config/aws_sdk.php
+application/config/aws.php
+
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
