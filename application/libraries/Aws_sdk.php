@@ -6,7 +6,7 @@ class Aws_sdk{
 	public function __construct()
 	{
 		$this->ci =& get_instance();
-		$this->ci->load->config('aws_sdk');
+		$this->ci->load->config('aws');
 		$this->s3Client  = S3Client::factory(array(
 		    'key'    => $this->ci->config->item('aws_access_key'),
 		    'secret' => $this->ci->config->item('aws_secret_key')
