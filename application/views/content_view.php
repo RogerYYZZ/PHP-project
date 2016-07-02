@@ -25,9 +25,10 @@
 
 .short-text img{
     width: 500px;
-    height: 400px;
+   
     left:10px;
     right:10px;
+   
 }
 
 </style>
