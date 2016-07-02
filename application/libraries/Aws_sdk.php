@@ -6,10 +6,12 @@ class Aws_sdk{
 	public function __construct()
 	{
 		$this->ci =& get_instance();
-		$this->ci->load->config('aws');
+	//	$this->ci->load->config('aws');
 		$this->s3Client  = S3Client::factory(array(
-		    'key'    => $this->ci->config->item('aws_access_key'),
-		    'secret' => $this->ci->config->item('aws_secret_key')
+		//    'key'    => $this->ci->config->item('aws_access_key'),
+		 //   'secret' => $this->ci->config->item('aws_secret_key')
+			'key' => getenv['aws_access_key'];
+			'secret' => getenv['aws_secret_key'];
 		));
 	}
 	public function __call($name, $arguments=null)
