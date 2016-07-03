@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 
 
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
+
   
    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
@@ -22,8 +22,10 @@
     'insertdatetime media table contextmenu paste code',
     'autoresize',
     'nonbreaking',
+    'spellchecker',
 
   ],
+  browser_spellcheck : true,
   toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   content_css: [
     '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
