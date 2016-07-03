@@ -11,10 +11,11 @@
     tinymce.init(
       { selector:'textarea',
       automatic_uploads: true,
-    forced_root_block : "" ,
-     //  force_br_newlines : true,
-     // force_p_newlines : false,
-     convert_urls: false,
+     forced_root_block : false ,
+      force_p_newlines : false,
+      force_br_newlines : true,
+      convert_newlines_to_brs : false,
+      remove_linebreaks : true, 
      
       plugins: [
     'advlist autolink lists link image charmap print preview anchor',
@@ -23,10 +24,11 @@
     'autoresize',
     'nonbreaking',
     'spellchecker',
+    'codesample',
 
   ],
   browser_spellcheck : true,
-  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codesample',
   content_css: [
     '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
     '//www.tinymce.com/css/codepen.min.css',
@@ -36,13 +38,7 @@
   file_browser_callback: function(field_name,url,type,win){
     if(type=='image') $('#my_form input').click();
   },
-   // setup: function(editor) {
-   //    editor.addButton( 'mybutton', {
-   //              text:"IMAGE",
-   //              icon: false,
-            
-   //          });
-   //      },
+
   nonbreaking_force_tab: true,
           menubar: false,
          height:"800",
