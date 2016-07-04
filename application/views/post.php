@@ -16,6 +16,8 @@
       force_br_newlines : true,
       convert_newlines_to_brs : false,
       remove_linebreaks : true, 
+        verify_html : false,
+         remove_trailing_nbsp : false,
      
       plugins: [
     'advlist autolink lists link image charmap print preview anchor',
@@ -25,14 +27,15 @@
     'nonbreaking',
     'spellchecker',
     'codesample',
+    'media',
 
   ],
   browser_spellcheck : true,
-  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | codesample',
+  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | media | codesample',
   content_css: [
     '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
     '//www.tinymce.com/css/codepen.min.css',
-    '/personal/public/css/content.css'
+     '/personal/public/css/content.css'
   ],
 
   file_browser_callback: function(field_name,url,type,win){
@@ -83,7 +86,7 @@ div.mce-edit-area{
   
   </div>
 
-  <form id="my_form" action="<?php echo base_url(); ?>upload" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden"> <input name="userfile" type="file" onchange="$('#my_form').ajaxSubmit({ success: function(d){$('.mce-window .mce-container-body input:first').val(d);} });this.value='';">
+  <form id="my_form" action="<?php echo base_url(); ?>upload" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden"> <input name="userfile" type="file" accept = ".jpg,.jpeg,.png,.gif" onchange="$('#my_form').ajaxSubmit({ success: function(d){$('.mce-window .mce-container-body input:first').val(d);} });this.value='';">
   </form>
 </div>
   <footer class="footer">
