@@ -14,7 +14,7 @@
 
 <style>
 #bs-example-navbar-collapse-1{
-  margin-left: 20%;
+  margin-left: 10%;
 }
 .img-responsive {
 max-width: 20%; /* or to whatever you want here */
@@ -36,16 +36,16 @@ max-height: 20%; /* or to whatever you want here */
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="<?php echo base_url(); ?>">
       <img style="max-width:50px; margin-top: -7px;" src="<?php echo base_url();?>public/image/Roger.jpg"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <!-- <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
+      <ul class="nav navbar-nav">
+        <li><a href="<?php echo base_url();  ?>user/content">Read</a></li>
+        <li><a href="<?php echo base_url();  ?>user/post">Post</a></li>
+    <!--     <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -56,9 +56,9 @@ max-height: 20%; /* or to whatever you want here */
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
-        </li>
-      </ul> -->
-      <form class="navbar-form navbar-left" id="search1" role="search" >
+        </li> -->
+      </ul>
+      <form class="navbar-form navbar-left" id="search1" role="search"  style="margin-left: 10%">
         <div class="form-group">
           <input type="text" class="form-control" id=" form-control1" placeholder="Search" style="width: 300px;">
         </div>
