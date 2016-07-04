@@ -28,10 +28,11 @@
     'spellchecker',
     'codesample',
     'media',
+    'textcolor',
 
   ],
   browser_spellcheck : true,
-  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | media | codesample',
+  toolbar: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | media | codesample',
   content_css: [
     '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
     '//www.tinymce.com/css/codepen.min.css',
