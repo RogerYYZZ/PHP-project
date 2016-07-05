@@ -23,11 +23,11 @@
     height: auto;
 }
 
-.short-text img{
+.short-text img, iframe{
     width: 500px;
    
-    left:10px;
-    right:10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
    
 }
 
@@ -39,13 +39,13 @@
 	<div class="row">
         <div class="alert alert-info" id = "log_alert" role="alert" style = "display: none">You need log in first.</div>
 		<div class="col-md-6 col-md-offset-2">
-
+     
 	<?php foreach ($content as $row): ?>
 
 		<div class="panel panel-default" style = "margin-top: 30px">
        <div class="panel-heading" ><h3><a href="<?php echo base_url();?>user/post/<?php echo $row->post_id;?>" style = "color: black"><?php echo $row->title; ?></a></h3><hr><cite><?php echo $row->username;?></cite> <p style="display: inline; margin-left: 20px"><?php echo $row->date;  ?></p></div>
        
-        <div class="panel-body short-text" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->content;?></div>
+        <div class="panel-body short-text" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->content;?></p></div>
         <div style="text-align:center;margin-top: 20px">
             <a class = "show_more" id = "show_more_<?php echo $row->post_id;?>" href = "#" style="margin: auto">Show more</a>
         </div>
