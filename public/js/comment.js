@@ -30,6 +30,7 @@ $(document).ready(function(){
                         if(data["error"] == "false"){
                         //	window.location.href = BASE_URL;
                         $("#log_alert").show();	
+                        $('html,body').scrollTop(0);
                         }
                         else{
                             $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
