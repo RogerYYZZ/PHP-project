@@ -33,7 +33,7 @@ $(document).ready(function(){
                         $('html,body').scrollTop(0);
                         }
                         else{
-                            $('#commentList_'+id).append("<li><div class='commenterImage'><p>"+data["username"]+":"+"</p></div><div class='commentText'><p>"+content+"</p><span class='date sub-text'>"+datetime+"</span></div></li>");
+                            $('#commentList_'+id).append("<li><div><span class='glyphicon glyphicon-user text-primary' style='float:left'></span> <p class='username'>"+data["username"]+"</p><span class='sub-text' style='padding-left:10px'>"+datetime+"</span></div><div style='clear:left'><p>"+content+"</p></div></li>");
                             form[0].reset();
                           //  alert(data);
                        }
