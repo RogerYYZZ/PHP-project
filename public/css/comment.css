@@ -40,7 +40,7 @@
     margin-top:10px;
 }
 .commentList li > div {
-    display:table-cell;
+   /* display:inline;*/
 }
 .commenterImage {
     width:30px;
@@ -63,4 +63,11 @@
 .actionBox {
     border-top:1px dotted #bbb;
     padding:10px;
+}
+.username{
+    float:left;
+    padding-left:10px;
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(46, 127, 205, 1);
 }

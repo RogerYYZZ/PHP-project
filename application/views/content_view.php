@@ -76,13 +76,14 @@
         	                           <?php foreach($row->comment as $list):?>
 
                                      <li>
-                                        <div class="commenterImage">
+                                        
+                                        <div>
                   <!-- <img src="http://lorempixel.com/50/50/people/6" /> -->
-                                            <p> <?php echo $list->username;?>: </p>
+                                            <span class="glyphicon glyphicon-user text-primary" style="float:left"></span> <p class="username"> <?php echo $list->username;?></p><span class="sub-text" style="padding-left:10px"><?php echo $list->minutes;?></span>
                                         </div>
-                                        <div class="commentText">
-                                            <p class=""><?php echo $list->comment_content;?></p> <span class="date sub-text"><?php echo $list->minutes;?></span>
 
+                                        <div style="clear:left">
+                                            <p><?php echo $list->comment_content;?></p> 
                                         </div>
                                     </li>
             

@@ -36,14 +36,14 @@
         			<ul class="commentList" id = "commentList_<?php echo  $single_post->post_id; ?>">
         				<?php foreach($single_comment as $row): ?>
         				   <li>
-                				<div class="commenterImage">
+                				<div>
                   <!-- <img src="http://lorempixel.com/50/50/people/6" /> -->
-                  					<p> <?php echo $row->username;?>: </p>
-                				</div>
-                				<div class="commentText">
-                    				<p class=""><?php echo $row->comment_content;?></p> <span class="date sub-text"><?php echo $row->minutes;?></span>
+                            <span class="glyphicon glyphicon-user text-primary" style="float:left"></span> <p class="username"> <?php echo $row->username;?></p><span class="sub-text" style="padding-left:10px"><?php echo $row->minutes;?></span>
+                        </div>
 
-                				</div>
+                        <div style="clear:left">
+                            <p><?php echo $row->comment_content;?></p> 
+                        </div>
             				</li>
             			<?php  endforeach;?>
         			</ul>
