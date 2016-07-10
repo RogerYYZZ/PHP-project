@@ -52,7 +52,7 @@
 <div class="container" style="margin-bottom: 20px">
 	<div class="row">
         <div class="alert alert-info" id = "log_alert" role="alert" style = "display: none">You need log in first.</div>
-		<div class="col-md-6 col-md-offset-2" style="overflow-y: scroll">
+		<div class="col-md-7 col-md-offset-2" style="overflow-y: scroll">
      
 	           <?php foreach ($content as $row): ?>
 
@@ -105,7 +105,7 @@
 
         </div>
 
-	   <div class="col-md-2 col-md-offset-2" style="padding-top: 30px">
+	   <div class="col-md-1 col-md-offset-1" style="padding-top: 50px; ">
 		<!-- <form action='/user/post'> -->
 		  <a type="button" href="<?php echo base_url(); ?>user/post" class="btn btn-primary" style="position: fixed">Post new article</a>
 		<!-- </form> -->
