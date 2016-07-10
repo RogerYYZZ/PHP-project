@@ -63,6 +63,11 @@ class content_model extends CI_Model{
 		return $my_post->result();
 	}
 
+	public function find_comment_ByName($username){
+		$comment = $this->db->query("SELECT post_id, comment_content, date FROM comment WHERE username = '".$username."'");
+		return $comment;
+	}
+
 	public function find_single_post($post_id){
 		$single_post = $this->db->query("SELECT * FROM post WHERE post_id = '".$post_id."'");
 		return $single_post->row();

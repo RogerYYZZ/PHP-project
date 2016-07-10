@@ -82,8 +82,14 @@ class Content extends CI_Controller {
 		public function get_profile(){
 		$this->load->model("content_model");
 		$my_post = $this->content_model->find_post($this->session->userdata("username"));
+		$my_comment = $this->content_model->find_comment_ByName($this->session->userdata("username"))->result();
+		foreach($my_comment as $key=>$row){
+			$post = $this->content_model->find_single_post($row->post_id)->title;
+			$my_comment[$key]->post = $post;
+		}
 		$data["user"] = $this->session->userdata("username");
 		$data["my_post"] = $my_post;
+		$data["my_comment"] = $my_comment;
 		$this->load->view('head',$data);
 		$this->load->view('profile',$data);
 
