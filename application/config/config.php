@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/personal/';
-$config['base_url'] = 'https://dry-chamber-28908.herokuapp.com/';
+$config['base_url'] = 'https://rogerfarm.herokuapp.com/';
 /*
 |--------------------------------------------------------------------------
 | Index File
