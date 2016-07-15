@@ -60,7 +60,10 @@ $route['login'] = 'User/login';
 $route['user/content'] = 'Content/show';
 $route['content/comment'] = 'Content/post_comment';
 $route['upload'] = 'Upload/Image_upload';
+$route['zhihu'] = 'News/get_zhihu';
+$route['resume'] = 'User/get_resume';
 $route['default_controller'] = 'User';
+
 //$route['(:any)'] = 'User';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
