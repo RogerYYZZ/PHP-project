@@ -73,7 +73,7 @@
             <li><p>Performed JUnit and integration test in Mac OS environment</p></li>
             <li><p>Github: <a href="https://github.com/RogerYYZZ/cs509/tree/master/cs509.hobbits">https://github.com/RogerYYZZ/cs509/tree/master/cs509.hobbits</a></p></li>
           </ul>
-          <iframe width="500" height="345" src="http://www.youtube.com/embed/muTFqaLaqWI/" style="display: block; margin: auto; margin-top:30px"></iframe>
+          <iframe width="500" height="345" src="//www.youtube.com/embed/muTFqaLaqWI/" style="display: block; margin: auto; margin-top:30px"></iframe>
           <hr>
            <div class="list_date"><p class="list"><strong>‘ASSISTments’ APP for Edmodo classroom, WPI</strong></p><p class="date">Sep 2015-Dec 2015</p></div>
          <ul>
