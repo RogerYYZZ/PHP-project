@@ -88,6 +88,13 @@ class User extends CI_Controller {
 
 	}
 
+	public function get_resume(){
+		$data["user"] = $this->session->userdata("username");
+		$this->load->view('head',$data);
+		$this->load->view('resume');
+
+	}
+
 
 	
 }
