@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <title>Document</title>
   <style>
-.short-text{
+/*.short-text{
     overflow: hidden;
     height: 40em;
-}
+}*/
 
-.full-text{
+/*.full-text{
     height: auto;
 }
 .short-text .content{
 	margin-top: 20px;
-}
+}*/
 .short-text .content img, iframe{
-    width: 750px;
+    width: 440px;
    
     margin-left: 50%;
     transform: translateX(-50%);
@@ -25,11 +25,11 @@
 h2{
 	font-size: 18px;
 }
-
+/*
 .cover{
   background-image:url("<?php echo base_url();?>public/image/Roger2.jpg"); 
   /*height: auto; */  
-  -webkit-background-size: cover; 
+/*  -webkit-background-size: cover; 
   -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -38,6 +38,14 @@ h2{
          background-position: top left;
          background-attachment: fixed;
    
+}*/
+
+.panel-default > .panel-heading-custom {
+    background-color: #3399ff;
+   
+     color:white;
+
+
 }
 
 
@@ -89,17 +97,17 @@ h2{
 <div class="container" style="margin-bottom: 20px">
 	<div class="row">
         
-		<div class="col-md-10 col-md-offset-1" style="overflow-y: scroll">
+		<div class="col-md-6 col-md-offset-3" style="overflow-y: scroll">
      
-	           <?php foreach ($article->stories as $row): ?>
+	           <?php foreach ($article->news as $row): ?>
 
 		          <div class="panel panel-default" style = "margin-top: 30px">
-                        <div class="panel-heading" ><h3><?php echo $row->title;?></h3></div>
+                        <div class="panel-heading panel-heading-custom" ><h3><a href="<?php echo base_url();?>zhihu/<?php echo $row->id;   ?>" style="text-decoration:none; color:white"><?php echo $row->title;?></a></h3></div>
        
-                        <div class="panel-body short-text" style="text-overflow:ellipsis; overflow:hidden"><?php echo $row->full_content->body;?></p></div>
-                             <div style="text-align:center;margin-top: 20px; margin-buttom: 20px;">
+                        <div class="panel-body short-text" style="text-overflow:ellipsis; overflow:hidden"><div class="content"><img  src=<?php echo $row->image;?>></div></div>
+                            <!--  <div style="text-align:center;margin-top: 20px; margin-buttom: 20px;">
                                 <a class = "show_more" href = "#" style="margin: auto">Show more</a>
-                            </div>
+                            </div> -->
                             
 
 
