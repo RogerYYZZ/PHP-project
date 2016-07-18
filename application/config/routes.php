@@ -61,6 +61,7 @@ $route['user/content'] = 'Content/show';
 $route['content/comment'] = 'Content/post_comment';
 $route['upload'] = 'Upload/Image_upload';
 $route['zhihu'] = 'News/get_zhihu';
+$route['zhihu/(:num)'] = 'News/get_zhihu_single/$1';
 $route['resume'] = 'User/get_resume';
 $route['default_controller'] = 'User';
 
