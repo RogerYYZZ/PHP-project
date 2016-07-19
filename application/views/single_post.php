@@ -22,7 +22,7 @@
 				<div class="panel-heading" >
 					<h2><?php echo $single_post->title; ?></h2>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body" style="text-overflow:ellipsis; overflow:hidden">
 					<?php echo $single_post->content; ?>
 				</div>
 
