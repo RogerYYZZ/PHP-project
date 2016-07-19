@@ -7,7 +7,9 @@
 </script>
 <script src="<?php echo base_url();?>public/js/comment.js"></script>
 <style>
-
+.content img,iframe{
+    width:90%;
+}
 
 </style>
 </head>

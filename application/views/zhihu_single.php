@@ -17,7 +17,7 @@
 <style>
 
 .content img{
-    width:550px;
+    width:90%;
 }
 </style>
 </head>
