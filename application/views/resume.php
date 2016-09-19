@@ -40,7 +40,7 @@
     <div class="col-md-10 col-md-offset-1">
         <h3>Zheming Yang</h3>
         <hr>
-        <p>14 Berkshire St Apt #1, Worcester MA 01609</p>
+        <p>160 pleasant St Apt #403, Malden MA 02148</p>
         <p>508-797-7300</p>
         <p>zhemingyang2010@gmail.com</p>
         <p>Github: <a href="https://github.com/RogerYYZZ/">https://github.com/RogerYYZZ/</a></p>
@@ -49,11 +49,11 @@
         <hr>
        
          <div class="list_date"><p class="list"><strong>Worcester Polytechnic Institute (WPI),</strong> Worcester, MA</p><p class="date">May 2016</p></div>
-         <p class="degree"><strong>Master of Science, Electrical and Computer Engineering, </strong>GPA: 3.4</p>
+         <p class="degree"><strong>Master of Science, Electrical and Computer Engineering </strong></p>
          <p class="degree"><strong>Relevant coursework: </strong>Database Management Systems; Introduction to Algorithms; Design of Software System; Introduction to Local and Wide Area Networks; Analysis of probabilistic and Systems;</p>
          <br>
            <div class="list_date"><p class="list"><strong>Beijing Institute of Technology,</strong> Beijing, China</p><p class="date">June 2014</p></div>
-         <p class="degree"><strong>Bachelor of Science, Communication Engineering, </strong>GPA: 3.3</p>
+         <p class="degree"><strong>Bachelor of Science, Communication Engineering </strong></p>
          <p class="degree"><strong>Relevant coursework: </strong>Data Structure and Algorithm Design; Digital Circuit; C Programming;</p>
 
          <h3>Skills</h3>
@@ -73,7 +73,7 @@
             <li><p>Performed JUnit and integration test in Mac OS environment</p></li>
             <li><p>Github: <a href="https://github.com/RogerYYZZ/cs509/tree/master/cs509.hobbits">https://github.com/RogerYYZZ/cs509/tree/master/cs509.hobbits</a></p></li>
           </ul>
-          <iframe width="500" height="345" src="//www.youtube.com/embed/muTFqaLaqWI/" style="display: block; margin: auto; margin-top:30px"></iframe>
+          <iframe width="400" height="345" src="//www.youtube.com/embed/muTFqaLaqWI/" style="display: block; margin: auto; margin-top:30px"></iframe>
           <hr>
            <div class="list_date"><p class="list"><strong>‘ASSISTments’ APP for Edmodo classroom, WPI</strong></p><p class="date">Sep 2015-Dec 2015</p></div>
          <ul>
@@ -91,12 +91,13 @@
             <li><p>Github: <a href="https://github.com/RogerYYZZ/PHP-project">https://github.com/RogerYYZZ/PHP-project</a></p></li>
           </ul>
             <hr>
-            <div class="list_date"><p class="list"><strong>Arduino project to control the move of car by voice, BIT </strong></p><p class="date">Nov 2013-Dec 2013 </p></div>
+            <div class="list_date"><p class="list"><strong>Android application, MiniLinkedIn, WPI </strong></p><p class="date">July 2016-Aug 2016  </p></div>
          <ul>
-            <li><p>Developed the algorithms using C programming to achieve the car moved</p></li>
-            <li><p>Established control system in Arduino board</p></li>
-            <li><p>Executed integrate test to guarantee the car can be operated accurately</p></li>
+            <li><p>Implemented functions similar to LinkedIn: editing user profile, creating and editing education, creating and editing work experience</p></li>
+            <li><p>Developed client UI using RecyclerView and RecyclerView adapter</p></li>
+            <li><p>Persisted personal data by android shared preferences</p></li>
           </ul>
+          <iframe width="400" height="345" src="//www.youtube.com/embed/XnsU5pJkR0s" style="display: block; margin: auto; margin-top:30px"></iframe>
           <h3>Experience</h3>
          <hr>
           <div class="list_date"><p class="list"><strong>Software Engineer Intern, China Unicom, Beijing, China</strong></p><p class="date">June 2013-Aug 2013</p></div>
